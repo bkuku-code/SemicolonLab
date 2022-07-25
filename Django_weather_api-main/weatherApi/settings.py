@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    # 'corsheaders',
     'weather',
     'rest_framework_simplejwt',
     'rest_registration'
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'weatherApi.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -84,14 +81,13 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'weatherinfo',
-        'USER': 'goodnews',
-        'PASSWORD': 'password',
+        'USER': 'bkuku',
+        'PASSWORD': 'password@123',
         'HOST': 'localhost',
         'PORT': '5432',
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -111,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -123,11 +118,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 STATIC_URL = 'static/'
 
@@ -139,38 +132,36 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST ='smpt.gmail.com'
+EMAIL_HOST = 'smpt.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'oziichukwu1@gmail.com'
-EMAIL_HOST_PASSWORD='123Ugc@@@'
-EMAIL_USE_TLS =True
+EMAIL_HOST_USER = 'gbolahantunde@gmail.com'
+EMAIL_HOST_PASSWORD = '123Ugc@@'
+EMAIL_USE_TLS = True
 
 REST_REGISTRATION = {
     'REGISTER_VERIFICATION_URL': 'https://frontend-host/verify-user/',
     'RESET_PASSWORD_VERIFICATION_URL': 'https://frontend-host/reset-password/',
     'REGISTER_EMAIL_VERIFICATION_URL': 'https://frontend-host/verify-email/',
-    'RESET_PASSWORD_VERIFICATION_URL':'oziichukwu1@gmail.com',
-    'VERIFICATION_FROM_EMAIL':'oziichukwu1@gmail.com',
-    'REGISTER_VERIFICATION_ENABLED' : False,
+    'RESET_PASSWORD_VERIFICATION_URL': 'gbolahantunde@gmail.com',
+    'VERIFICATION_FROM_EMAIL': 'gbolahantunde@gmail.com',
+    'REGISTER_VERIFICATION_ENABLED': False,
     'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
 }
-
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ), 
+    ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]
 }
 
-
 AUTH_USER_MODEL = 'weather.WeatherUser'
 
 from datetime import timedelta
+
 ...
 
 SIMPLE_JWT = {
